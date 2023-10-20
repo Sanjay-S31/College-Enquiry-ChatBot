@@ -5,9 +5,12 @@ the admission process with ease and ensuring that they have the information they
 The objectives of a college enquiry chatbot are focused on providing accurate information, personalized assistance, and a positive user experience to prospective students,
 faculties, visitors and parents helping them make informed decisions about their college choices and ultimately increasing the likelihood that they will enroll in the college.
 <br>
-<img src="https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/acae8ae1-a03d-45b3-9acb-281677216fe4" height="250px" width="400px">
-<img src="https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/a893bdad-e043-4652-8622-04f10efed9cb" height="250px" width="400px">
-<img src="https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/3bc37204-a80b-4df2-8ce7-bc062cc87268" height="250px" width="400px">
+<img src="https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/acae8ae1-a03d-45b3-9acb-281677216fe4" height="250px" width="450px">
+<img src="https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/a893bdad-e043-4652-8622-04f10efed9cb" height="250px" width="450px">
+<img src="https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/3bc37204-a80b-4df2-8ce7-bc062cc87268" height="250px" width="450px">
+<img src="https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/2b48f066-8b4e-48d0-bc22-79ac274af7a1" height="250px" width="450px">
+
+
 
 # Technology Stack : 
 
