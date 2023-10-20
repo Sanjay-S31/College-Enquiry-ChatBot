@@ -10,8 +10,10 @@ faculties, visitors and parents helping them make informed decisions about their
 
 # Technology Stack : 
 
-Front-End : ![image](https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/a7941448-2276-4829-9a0b-3806ffbbf906)
-Back-End : ![image](https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/18e652da-8e28-4d66-8fae-00bc4eb3e016)
+Front-End : ![image](https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/110276c2-2792-408b-b7c9-51ed08213be9)
+
+Back-End : 
+![image](https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/18e652da-8e28-4d66-8fae-00bc4eb3e016)
 
 
 # Database Info :
