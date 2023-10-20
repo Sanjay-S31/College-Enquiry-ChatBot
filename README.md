@@ -8,6 +8,12 @@ faculties, visitors and parents helping them make informed decisions about their
 ![image](https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/a893bdad-e043-4652-8622-04f10efed9cb)
 ![image](https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/3bc37204-a80b-4df2-8ce7-bc062cc87268)
 
+# Technology Stack : 
+
+Front-End : ![image](https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/a7941448-2276-4829-9a0b-3806ffbbf906)
+Back-End : ![image](https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/18e652da-8e28-4d66-8fae-00bc4eb3e016)
+
+
 # Database Info :
  Create a database called register in MySQL and create the following tables :- 
  ![image](https://github.com/Sanjay-S31/College-Enquiry-ChatBot/assets/127613655/f95c7082-1ddb-4ea3-91b2-472030e7115b)
