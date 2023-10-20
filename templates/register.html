@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/icon.png">
+    <link rel="stylesheet" href="/static/css/register_page.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <script src="/static/script/register_validation.js"></script>
+    <div id="header">
+        <h1>CHAT BOT</h1>
+        <nav>
+            <a href="{{ url_for('login') }}">LOGIN</a>
+            |  
+            <a href="{{ url_for('register') }}">REGISTER</a>
+        </nav>
+    </div>
+    <hr>
+    <div id="register">
+        <div id="hi_gif">
+            <img src="/static/images/gif_register.gif" alt="hi_gif" height="300" width="300">
+        </div>
+        <div class="reg_border">
+            <h2>REGISTER</h2><br>
+            <form action="/register" class="form" method="post">
+                <i class="bi bi-person-fill"></i>
+                <input id="username" class="input" name="username" type="text" placeholder="Username"><br>
+                <i class="bi bi-envelope-at-fill"></i>
+                <input id="email" class="input" name="email" type="text" placeholder="Email"><br>
+                <i class="bi bi-lock-fill"></i>
+                <input id="password" class="input" name="password" type="password" placeholder="Password"><br>
+                <button id="button" class="input" type="submit" onclick="reg_check()" >Register</button>
+                <h3 id="already_register">Already Registerd? <a href="{{ url_for('login') }}">Login</a></h3>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

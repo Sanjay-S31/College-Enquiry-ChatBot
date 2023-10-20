@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/icon.png">
+    <link rel="stylesheet" href="/static/css/home_page.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      #home-gif{
+        position: relative;
+        bottom: 450px;
+        max-width: 350px;
+        max-height: 350px;
+        left: 70px;
+      }
+      .word {
+        position: relative;
+        bottom: 900px;
+        margin-left: 50px;
+        color: white;
+        font: 700 normal 2.5em 'tahoma';
+        max-width: 500px;
+        text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>CHATBOT</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a> |
+            <button type="button" id="about" onclick="aboutus()">About Us</button> |
+            <button type="button" id="sugg-box" onclick="suggbox()">Suggestion Box</button> |
+            <a href="/logout" id="logout" onclick="logout()">Logout</a> 
+        </nav>
+    </div>
+    <hr>
+    <script>
+        document.getElementById('logout').addEventListener('click',function logout(){
+            Swal.fire({
+                icon:'success',
+                text:'Thanks for visiting this website',
+                title:'Logged Out Successful',
+                showConfirmButton: false
+            });
+          }
+        );
+    </script>
+    
+    <div id="outer_chatbot_box">
+        <div class="chat">
+            <div class="msg-text">
+                <b>Hi there, Welcome to REC! 👋 If you need any assistance, I'm always here.</b>
+            </div>
+            <div class="msg-text">
+                <b>Which of the following user groups do you belong to?
+                    <br><br>1.&emsp;Student's Section Enquiry.</br>2.&emsp;Faculty Section Enquiry. </br>3.&emsp;Parent's Section Enquiry.</br>4.&emsp;Visitor's Section Enquiry.</br>
+                </b>
+            </div>
+            <div class="user_query"></div>
+            <div class="chatbot_response"></div>
+        </div>
+        <div class="input">
+            <form class="msg-inputarea">
+                <input type="text" id="input_query" class="msg-input" name="input_query" placeholder="Ask your query here!!!">
+                <button type="submit" id="button">Send</button>
+            </form>
+        </div>
+    </div>
+    <img src="/static/images/home_gif.gif" alt="" id="home-gif">
+    <div class="word"></div>
+    <script>
+      var words = ['Welcome To College Enquiry Chatbot','Ask your queries here...!!'],
+            part,
+            i = 0,
+            offset = 0,
+            len = words.length,
+            forwards = true,
+            skip_count = 0,
+            skip_delay = 15,
+            speed = 70;
+        var wordflick = function () {
+          setInterval(function () {
+            if (forwards) {
+              if (offset >= words[i].length) {
+                ++skip_count;
+                if (skip_count == skip_delay) {
+                  forwards = false;
+                  skip_count = 0;
+                }
+              }
+            }
+            else {
+              if (offset == 0) {
+                forwards = true;
+                i++;
+                offset = 0;
+                if (i >= len) {
+                  i = 0;
+                }
+              }
+            }
+            part = words[i].substr(0, offset);
+            if (skip_count == 0) {
+              if (forwards) {
+                offset++;
+              }
+              else {
+                offset--;
+              }
+            }
+            $('.word').text(part);
+          },speed);
+        };
+
+        $(document).ready(function () {
+          wordflick();
+        });
+    </script>
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>About Our College</h2>
+        </div>
+        <div class="modal-body">
+          <div class="college-img">
+            <img src="https://www.rajalakshmi.org/image/banner-1.jpg" alt="" width="400" height="300">
+          </div>
+            <p>Rajalakshmi Engineering College, an autonomous institution affiliated to Anna University, Chennai, was established in the year 1997 under the aegis of Rajalakshmi Educational Trust whose members have had consummate experience in the fields of education and industry. The College has grown from strength to strength in the last 25 years and progressing towards Excellence in Engineering Education, Research and Development.</p><br>
+            <p>Ours is one among the few Colleges to receive accreditation for Under Graduate Engineering programmes from the National Board of Accreditation (NBA), New Delhi, as soon as attaining the eligibility to apply for accreditation. The College is accredited by the National Assessment and Accreditation Council (NAAC) with 'A' Grade. The college has also secured 12(b) status from UGC. Anna University, Chennai has granted Permanent Affiliation for 10 UG courses viz. Aeronautical Engineering, Automobile Engineering, Biomedical Engineering, Biotechnology, Civil Engineering, Computer Science and Engineering, Electronics and Communication Engineering, Electrical and Electronics Engineering, Mechanical Engineering, Information Technology and 4 PG Courses viz. M.Tech - Biotechnology, M.E. Computer Science and Engineering, M.E. Communication Systems and Master of Business Administration.</p><br>
+        <p>The Department of Scientific and Industrial Research (DSIR), Government of India has recognized the College as a Scientific and Industrial Research Organization (SIRO), considering its potential for Research and Development activities.</p><br>
+        <p>Vision : 
+        To be an institution of excellence in Engineering, Technology and Management Education & Research. To provide competent and ethical professionals with a concern for society.
+        
+        Mission : 
+        To impart quality technical education imbibed with proficiency and humane values. To provide right ambience and opportunities for the students to develop into creative, talented and globally competent professionals. To promote research and development in technology and management for the benefit of the society.
+        
+        The major assets of the Rajalakshmi Engineering College :
+        <ul>
+            <li>Eminent and well experienced faculty</li>
+            <li>Research facility</li>
+            <li>NAAC 'A++' Grade awarded Institution</li>
+            <li>NBA Accredited departments</li>
+            <li>NBA Accredited departments</li>
+            <li>ISO certified</li>
+        </ul>
+      </p>
+        </div>
+        <div class="modal-footer">
+          <h3>Contact Us : </h3>
+          <p><i class="bi bi-envelope-at-fill"></i>rajalakshmi@gmail.com</p>
+          <p><i class="bi bi-telephone-fill"></i>044-45164614</p>
+          <p><i class="bi bi-map-fill"></i>Vellore - Chennai Rd, Rajalakshmi Nagar, Thandalam, Tamil Nadu 602105</p>
+        </div>
+      </div>
+      
+    
+    </div>
+    
+
+<!-- The Modal -->
+<div id="suggestion-box" class="modal-sugg">
+
+  <!-- Modal content -->
+  <div class="modal-content-sugg">
+    <div class="modal-header-sugg">
+      <span class="close-sugg">&times;</span>
+      <h2>Suggestion Box</h2>
+    </div>
+    <div class="modal-body-sugg">
+      <form action="/suggestion" method="post">
+        <div class="sugg-email">
+        <i class="bi bi-envelope-at-fill"></i>
+        <input id="email" class="input" name="email" type="text" placeholder="Email">
+        </div>
+        <br>
+        <div class="sugg">
+          <i class="bi bi-pen-fill" id="pen"></i>
+          <textarea id="suggestion" class="input" name="suggestion" type="text" placeholder="Enter Your Suggestion Here !!!!"></textarea>
+        </div>
+        </div>
+        <div class="modal-footer-sugg">
+      <!-- <button type="button" class="buttons">Close</button> -->
+        <button type="submit" class="sugg-button">Submit</button>
+      </form>
+  </div>
+  </div>
+
+</div>
+
+    <script>
+      function aboutus(){
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("about");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    }
+      </script>
+
+
+      <!-- Script for suggestion Box -->
+
+      <script>
+        function suggbox(){
+
+        // Get the modal
+        var modal = document.getElementById("suggestion-box");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("sugg-box");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close-sugg")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      }
+        </script>
+    
+<script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+<script>
+
+    $("#alert").delay(3000).slideUp(200, function() {
+    $(this).alert('close');
+    });
+
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
+    
+    const msgerForm = get(".msg-inputarea");
+    const msgerInput = get(".msg-input");
+    const msgerChat = get(".chat");
+
+
+    // Icons made by Freepik from www.flaticon.com
+    // const BOT_IMG = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSByXho41yToOFz5UcHHwct3X-OWwkft_akfA&usqp=CAU";
+    const BOT_NAME = "Bot";
+    const PERSON_NAME = "You";
+
+    msgerForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const msgText = msgerInput.value;
+      if (!msgText) return;
+
+      appendMessage(PERSON_NAME, "right", msgText);
+      msgerInput.value = "";
+      botResponse(msgText);
+    });
+
+    function appendMessage(name, side, text) {
+      //   Simple solution for small apps
+      const msgHTML = `
+      <div class="msg ${side}-msg">
+         <div class="msg-bubble">
+            <div class="msg-info">
+              <div class="msg-info-name">${name}</div>
+            <div class="msg-info-time">${formatDate(new Date())}</div>
+            </div>
+          <div class="msg-text">${text}</div>
+          </div>
+      </div>`;
+
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+    }
+
+    function botResponse(rawText) {
+
+      // Bot Response
+      $.get("/get", { msg: rawText }).done(function (data) {
+        console.log(rawText);
+        console.log(data);
+        const msgText = data;
+        appendMessage(BOT_NAME, "left", msgText);
+
+      });
+
+    }
+
+
+    //Utils
+    function get(selector, root = document) {
+      return root.querySelector(selector);
+    }
+
+    function formatDate(date) {
+      const h = "0" + date.getHours();
+      const m = "0" + date.getMinutes();
+
+      return `${h.slice(-2)}:${m.slice(-2)}`;
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>
